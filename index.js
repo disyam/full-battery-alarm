@@ -8,7 +8,7 @@ async function start() {
       exec("cat /sys/class/power_supply/BAT0/status")
     ]);
     while (Number(capacity.trim()) >= 95 && status.trim() === "Charging") {
-      await exec("paplay alarm.ogg");
+      await exec(`paplay ${__dirname}/alarm.ogg`);
       const { stdout } = await exec("cat /sys/class/power_supply/BAT0/status");
       status = stdout;
     }
@@ -17,4 +17,4 @@ async function start() {
   }
 }
 
-start();
+start().catch(err => console.error(err));
