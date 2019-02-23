@@ -17,5 +17,7 @@
     "url": "https://github.com/disyam/full-battery-alarm/issues"
   },
   "homepage": "https://github.com/disyam/full-battery-alarm#readme",
-  "dependencies": {}
+  "dependencies": {
+    "node-cron": "~2.0.3"
+  }
 }
