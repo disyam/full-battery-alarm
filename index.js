@@ -9,7 +9,7 @@ cron.schedule("* * * * *", async () => {
       exec("cat /sys/class/power_supply/BAT0/status")
     ]);
     while (
-      Number(capacity.trim()) >= 95 &&
+      Number(capacity.trim()) >= 99 &&
       (status.trim() === "Charging" || status.trim() === "Full")
     ) {
       await exec(`paplay ${__dirname}/alarm.ogg`);
